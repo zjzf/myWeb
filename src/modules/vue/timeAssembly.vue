@@ -1,6 +1,7 @@
 <template>
   <div class="box">
-    <div class="dateBox">
+    <div class="dateBox"
+      :style="{ '--timeColor': $store.state.timeColor, '--calendarColor': $store.state.calendarColor }">
       <div class="time">{{ time }}</div>
       <div class="date">{{ date }}</div>
     </div>
@@ -78,14 +79,14 @@ export default {
 }
 
 .date {
-  font-size: 28px;
-  color: rgb(35, 169, 242);
+  font-size: 200%;
+  color: var(--timeColor);
   margin-left: 15px;
 }
 
 .time {
-  font-size: 48px;
-  color: #ffffff;
+  font-size: 350%;
+  color: var(--calendarColor);
 }
 </style>
   
