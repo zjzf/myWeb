@@ -3,7 +3,7 @@
     <div class="dateBox">
       <div class="time">{{ time }}</div>
       <div class="date">{{ date }}</div>
-</div>
+    </div>
   </div>
 </template>
   
@@ -12,14 +12,14 @@ export default {
   name: 'timeAssembly',
   data() {
     return {
-      date: null,
-      time: null,
+      date: this.getToday().date,
+      time: this.getToday().time,
     };
   },
   mounted() {
     const clock = setInterval(() => {
       this.date = this.getToday().date;
-      this.time =  this.getToday().time;
+      this.time = this.getToday().time;
     }, 1000);
     // 通过$once来监听定时器，在beforeDestroy钩子可以被清除。
     this.$once("hook:beforeDestroy", () => {
@@ -76,13 +76,13 @@ export default {
   align-items: flex-end;
   justify-content: flex-end;
 }
- 
+
 .date {
   font-size: 28px;
   color: rgb(35, 169, 242);
   margin-left: 15px;
 }
- 
+
 .time {
   font-size: 48px;
   color: #ffffff;

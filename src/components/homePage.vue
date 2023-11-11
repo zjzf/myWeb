@@ -1,8 +1,8 @@
 <template>
   <div class="app">
+    <button class="setClass">设置</button>
     <timeAssembly class="timeAssemblyClass"></timeAssembly>
     <sixHexagonAssembly class="sixHexagonAssemblyClass"></sixHexagonAssembly>
-
   </div>
 </template>
   
@@ -28,11 +28,18 @@ export default {
   padding: 0;
   height: 100vh;
   overflow: hidden;
+  /* 让背景图片铺满全屏 */
   background-image: url('../assets/bei.png');
-  background-size: 100%;
-  background-position: 0%;
+  background-size: cover; /* 使用 cover 属性让背景图片铺满整个屏幕 */
+  background-position: center; /* 让背景图居中 */
   background-repeat: no-repeat;
   user-select: none;
+}
+
+.setClass{
+  position: fixed;
+  right: 1%;
+  top: 1%;
 }
 
 .sixHexagonAssemblyClass {

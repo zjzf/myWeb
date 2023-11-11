@@ -2,10 +2,13 @@
     <div>
         <div class="hex-container">
             <div class="hexagon">
-                <div class="hexagon-item">
-                    音乐
-                </div>
+                <router-link class="routerClass" to="/about">
+                    <div class="hexagon-item">
+                        音乐
+                    </div>
+                </router-link>
             </div>
+
             <div class="hexagon">
                 <div class="hexagon-item">
                     暂无
@@ -47,13 +50,19 @@ export default {
     name: 'sixHexagonAssembly',
 
     mounted() {
-
+        
     },
 
 }
 </script>
     
 <style>
+
+.routerClass{
+    text-decoration: none; /* 去除下划线 */
+    color: inherit; /* 继承父元素的文字颜色 */
+}
+
 .hex-container {
     width: 480px;
     display: flex;
